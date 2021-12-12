@@ -27,6 +27,7 @@ import re
 import traceback
 import time
 import subprocess
+import datetime
 
 CHADSOFT_STATUS_URL = "https://www.chadsoft.co.uk/online-status/status.txt"
 countdown_status_regex = re.compile(r"<h1>COUNTDOWN STATUS: ([^<]+)</h1>")
@@ -60,6 +61,7 @@ def main():
                         if online_status != prev_online_status:
                             send_notification("notification.wav", online_status)
                             prev_online_status = online_status
+                            print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %I:%m %p')}] COUNTDOWN STATUS: {online_status}")
 
                     sleep_time = 180
                 else:
