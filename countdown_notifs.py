@@ -59,6 +59,7 @@ def main():
                         online_status = match_obj.group(1)
                         if online_status != prev_online_status:
                             send_notification("notification.wav", online_status)
+                            prev_online_status = online_status
 
                     sleep_time = 180
                 else:
