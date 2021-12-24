@@ -114,3 +114,4 @@ dmypy.json
 .pyre/
 
 notification.wav
+config.json
